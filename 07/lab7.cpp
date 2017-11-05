@@ -2,7 +2,8 @@
    Author: Kyle J. Wilson
  
    In this program I'm learning about 
-   null-terminated character arrays in cpp */
+   null-terminated character arrays in cpp 
+*/
 
 #include <cstdio>
 #include <cctype> 
@@ -70,6 +71,9 @@ void welcome() {
 
 // Convert the user input to uppercase characters 
 void convertToUpper(char str[]) {
+   // This is for traveling the while-loop -- in scope
+   int pos = 0;
+   
    // Initialize array to NULL
    char tempArr[Size] = { '\0' };
 
@@ -80,8 +84,9 @@ void convertToUpper(char str[]) {
    int arrSize = strlen(tempArr);
 
    // Loop through the temp array and set the characters to uppercase
-   for (int i = 0; (tempArr[i] != '\0'); i++) {
-      tempArr[i] = toupper(tempArr[i]);
+   while(tempArr[pos] != '\0') {
+      tempArr[pos] = toupper(tempArr[pos]);
+      pos++;
    }
    
    // Copy contents of temp (uppercase) back to original
@@ -90,6 +95,9 @@ void convertToUpper(char str[]) {
 }
 // Convert the second string to all lowercase char 
 void convertToLower(char str[]) {
+   // This is for traveling the while-loop -- in scope
+   int pos = 0;
+   
    // Initialize temp array to NULL
    char tempArr[Size] = { '\0' };
    
@@ -100,8 +108,9 @@ void convertToLower(char str[]) {
    int arrSize = strlen(tempArr);
 
    // Loop through the temp array and set the characters to lowercase
-   for (int i = 0; (tempArr[i] != '\0'); i++) {
-      tempArr[i] = tolower(tempArr[i]);
+   while(tempArr[pos] != '\0') {
+      tempArr[pos] = tolower(tempArr[pos]);
+      pos++;
    }
       
    // Copy the temp (lowercase) contents back to the original string
